@@ -1,0 +1,594 @@
+/* Basic Reset & Body Styles */
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+body {
+    margin: 0;
+    padding-top: 80px; /* Space for fixed header */
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat */
+    background: #1c1c7e;
+    color: white;
+}
+
+/* HEADER */
+header.navbar {
+    position: fixed; /* Makes the navbar sticky */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #f2f2f2;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    z-index: 1000;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.icons .icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 1rem;
+}
+
+/* HERO CAROUSEL SECTION - SWIPE EFFECT */
+.hero-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #1c1c7e;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.8s ease-in-out; /* Smooth slide transition */
+    width: 100%;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #1c1c7e;
+    color: white;
+}
+
+.carousel-slide img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(60%);
+    margin: 0 auto;
+}
+
+.carousel-caption {
+    position: static;
+    transform: none;
+    background: #1c1c7e;
+    max-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 0;
+}
+
+.carousel-caption h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.carousel-caption ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    text-align: left;
+    display: inline-block;
+    max-width: 800px;
+}
+
+.carousel-caption ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 8px;
+}
+
+.carousel-caption ul li::before {
+    content: '•';
+    color: red;
+    font-size: 1.2em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-right: 0.5rem;
+}
+
+/* Carousel Dots/Navigation (Optional) */
+.carousel-dots {
+    text-align: center;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    z-index: 10;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #717171;
+}
+
+/* PRODUCTS */
+.products {
+    background: #1c1c7e;
+    padding: 2rem;
+    text-align: center;
+}
+
+.products h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.product-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.product {
+    background: #fff;
+    color: #000;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    width: 250px;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.product button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* "More" / "Back" Button Style */
+.load-more-button {
+    background: red;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.load-more-button:hover {
+    background-color: #d10000;
+}
+
+/* PICK-BRICK SECTION */
+.pick-brick {
+    text-align: center;
+    padding: 2rem;
+    background: #1c1c7e;
+}
+
+.brick-image {
+    position: relative;
+    display: inline-block;
+}
+
+.brick-image img {
+    border-radius: 16px;
+    max-width: 100%;
+}
+
+.hotspot {
+    position: absolute;
+    background: red;
+    color: white;
+    font-weight: bold;
+    padding: 0.4rem 0.6rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 5;
+}
+
+/* INFO BOX STYLES */
+.info-box {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    width: 250px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.info-box.active {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.info-box h3 {
+    margin-top: 0;
+    color: #FFD700;
+}
+
+.info-box p {
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.info-box .close-info {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Style for the "Jetzt kaufen" link */
+.product-link {
+    display: inline-block;
+    background-color: #FF8C00;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.product-link:hover {
+    background-color: #e67e00;
+}
+
+/* REVIEWS */
+.reviews {
+    background: #1c1c7e;
+    padding: 2rem;
+}
+
+.review-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.review {
+    background: white;
+    color: black;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 250px;
+}
+
+.review strong {
+    color: #0b0d59;
+}
+
+.review-form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+/* Anpassung der Breite, Höhe und Schriftgröße für Formularfelder */
+.review-form input,
+.review-form select,
+.review-form textarea {
+    width: 650px;
+    padding: 1.2rem;
+    border-radius: 8px;
+    border: none;
+    color: #000;
+    font-size: 1.2rem;
+}
+
+.review-form select {
+    height: 3.8rem;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M287%2C197.4l-116.7-116.7c-4.7-4.7-12.3-4.7-17%2C0L5.4%2C197.4c-4.7%2C4.7-4.7%2C12.3%2C0%2C17c4.7%2C4.7%2C12.3%2C4.7%2C17%2C0l95.3-95.3l95.3%2C95.3c4.7%2C4.7%2C12.3%2C4.7%2C17%2C0C291.7%2C209.7%2C291.7%2C202.1%2C287%2C197.4z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.2em;
+    padding-right: 2.5rem;
+}
+
+
+.review-form textarea {
+    height: 200px;
+    resize: vertical;
+}
+
+.review-form button {
+    background: red;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    border-radius: 8px;
+}
+
+/* FOOTER */
+footer {
+    background: #111;
+    color: #aaa;
+    padding: 2rem;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+.footer-columns div {
+    flex: 1;
+    min-width: 150px;
+    margin: 1rem;
+}
+
+.footer-columns h4 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.footer-columns p {
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.footer-columns p br {
+    display: block;
+    content: "";
+    margin-bottom: 0.2em;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    color: #666;
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+}
+
+/* RESPONSIVE */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #000;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #f2f2f2;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        z-index: 999;
+        padding: 1rem;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .icons {
+        display: none;
+    }
+
+    /* Responsive adjustments for carousel */
+    .hero-carousel {
+        height: auto;
+    }
+
+    .carousel-slide img {
+        max-height: 300px;
+    }
+
+    .carousel-caption h1 {
+        font-size: 1.8em;
+    }
+
+    .carousel-caption p, .carousel-caption ul {
+        font-size: 0.9em;
+    }
+
+    .product-list, .review-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product, .review {
+        width: 90%;
+    }
+
+    /* Responsive Anpassung für Formularfelder */
+    .review-form input,
+    .review-form select,
+    .review-form textarea {
+        width: 90%;
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    .review-form select {
+        height: auto;
+        background-position: right 0.8rem center;
+        padding-right: 2rem;
+    }
+
+    .review-form textarea {
+        height: 150px;
+    }
+
+    .review-form button {
+        padding: 0.6rem 1.2rem;
+        font-size: 1.1rem;
+    }
+
+    .footer-columns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-columns div {
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+
+    /* Info Box Responsive */
+    .info-box {
+        width: 80%;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        margin-top: 20px;
+        position: fixed;
+        top: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-caption h1 {
+        font-size: 1.5em;
+    }
+
+    .carousel-caption p, .carousel-caption ul {
+        font-size: 0.8em;
+    }
+}
+
+
+/* Animationen */
+@keyframes bounce {
+    0%   { transform: translateY(0); }
+    30%  { transform: translateY(-8px); }
+    60%  { transform: translateY(4px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.6; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Produkte wippen beim Hover */
+.product:hover {
+    animation: bounce 0.6s;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Buttons ploppen */
+.product button:hover,
+.review-form button:hover,
+.load-more-button:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+/* Hotspot pulsiert */
+.hotspot {
+    animation: pulse 1.5s infinite;
+}
+
+/* Sektionen gleiten rein */
+section {
+    animation: fadeInUp 1s ease;
+}
+
+/* Optional: Button-Farben intensiver beim Hover */
+.product button:hover,
+.review-form button:hover,
+.load-more-button:hover {
+    background-color: #d10000;
+}

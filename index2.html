@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LEGO® Home</title>
+    <link rel="stylesheet" href="stylee.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">LEGO® HOME</div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav class="nav-links">
+            <a href="#">Einkaufen</a>
+            <a href="#">Entdecken</a>
+            <a href="#">Neuheiten</a>
+        </nav>
+        <div class="icons">
+            <img src="images/login-icon.png" class="icon" alt="Login" />
+            <img src="images/cart-icon.png" class="icon" alt="Cart" />
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide fade">
+                    <img src="images/lego-sofa-1.png" alt="Lego Sofa Ansicht 1">
+                    <div class="carousel-caption">
+                        <h1>Willkommen in der Welt von LEGO® Home</h1>
+                        <ul>
+                            <li>Individuelle Designmöbel: Einzigartige Stücke im eigenen Stil bauen</li>
+                            <li>Gemeinsam kreativ: Bauspaß mit Familie und Freunden</li>
+                            <li>Flexibel & langlebig: Anpassbare Möbel mit Freude-Garantie</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="carousel-slide fade">
+                    <img src="images/lego-sofa-3.png" alt="Lego Sofa Ansicht 2">
+                    <div class="carousel-caption">
+                        <h1>Entdecke endlose Möglichkeiten</h1>
+                        <ul>
+                            <li>Gestalte dein Sofa mit echten LEGO®-Elementen</li>
+                            <li>Unendliche Kombinationsmöglichkeiten für einzigartige Designs</li>
+                            <li>Robuste Konstruktion für langanhaltende Freude</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="carousel-slide fade">
+                    <img src="images/lego-sofa-2.png" alt="Lego Sofa Ansicht 3">
+                    <div class="carousel-caption">
+                        <h1>Mehr als nur Möbel – Ein Statement</h1>
+                        <ul>
+                            <li>Ideal für Design-Liebhaber und LEGO®-Fans jeden Alters</li>
+                            <li>Verbinde Spiel und Alltag in einzigartiger Weise</li>
+                            <li>Dein Zuhause, dein Design, deine Regeln</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="products">
+            <h2>Featured Products</h2>
+            <div class="product-list" id="featuredProductsList">
+                <div class="product">
+                    <img src="images/lego-bade.png" alt="SofaZan" />
+                    <h3>BadeZen – $349</h3>
+                    <p>Bunte Noppen laden zum Entspannen ein. Aus LEGO gebaut.</p>
+                    <button>BUY</button>
+                </div>
+                <div class="product">
+                    <img src="images/bricktable.png" alt="BrickTable" />
+                    <h3>BrickTable – $799</h3>
+                    <p>Stark, robust, ideal für Bausessions und Mahlzeiten.</p>
+                    <button>BUY</button>
+                </div>
+                <div class="product">
+                    <img src="images/brickperch.png" alt="BrickPerch" />
+                    <h3>BrickPerch – $69</h3>
+                    <p>Vielseitig & stylisch. Auch als Hocker oder Tisch nutzbar.</p>
+                    <button>BUY</button>
+                </div>
+            </div>
+            <button id="loadMoreBtn" class="load-more-button">More</button>
+            <button id="backBtn" class="load-more-button" style="display: none;">Back</button>
+        </section>
+
+        <section class="pick-brick">
+            <h2>Pick your Brick - Informationen und Variationen</h2>
+            <div class="brick-image">
+                <img src="images/brickroom.png" alt="Raum mit LEGO-Möbeln" />
+                <div class="hotspot" id="hotspot1" style="top: 35%; left: 15%;" data-info-id="infoBox1">+</div>
+                <div id="infoBox1" class="info-box">
+                    <h3>Der LEGO® Schrank</h3>
+                    <p>Ein modulares Schranksystem aus echten LEGO® Steinen. Individuell anpassbar in Größe und Farbe. Perfekt für das Kinderzimmer oder als Eyecatcher im Wohnbereich.</p>
+                    <a href="#" class="product-link">Jetzt kaufen</a>
+                    <button class="close-info">X</button>
+                </div>
+
+                <div class="hotspot" id="hotspot2" style="top: 70%; left: 70%;" data-info-id="infoBox2">+</div>
+                <div id="infoBox2" class="info-box">
+                    <h3>Der Brick Coffee Table</h3>
+                    <p>Dieser Couchtisch ist nicht nur ein stabiles Möbelstück, sondern bietet auch Stauraum für deine LEGO®-Sammlung oder andere Kleinigkeiten. Erhältlich in verschiedenen Oberflächen und Farben.</p>
+                    <a href="#" class="product-link">Jetzt kaufen</a>
+                    <button class="close-info">X</button>
+                </div>
+
+                <div class="hotspot" id="hotspot3" style="top: 70%; left: 30%;" data-info-id="infoBox3">+</div>
+                <div id="infoBox3" class="info-box">
+                    <h3>Das Brick Sofa</h3>
+                    <p>Unser ikonisches Sofa, gebaut aus tausenden LEGO® Steinen. Komfort trifft auf kreatives Design. Verfügbar in verschiedenen Größen und Farbvarianten, um dein Zuhause einzigartig zu machen.</p>
+                    <a href="#" class="product-link">Jetzt kaufen</a>
+                    <button class="close-info">X</button>
+                </div>
+
+                <div class="hotspot" id="hotspot4" style="top: 25%; left: 80%;" data-info-id="infoBox4">+</div>
+                <div id="infoBox4" class="info-box">
+                    <h3>Die Brick Lampe</h3>
+                    <p>Beleuchten Sie Ihren Raum mit der einzigartigen LEGO® Lampe. Ein modernes Design, das überall ein Blickfang ist. Erhältlich in verschiedenen Lichtfarben und Größen.</p>
+                    <a href="#" class="product-link">Jetzt kaufen</a>
+                    <button class="close-info">X</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews">
+            <h2>Customer Reviews</h2>
+            <div class="review-list">
+                <div class="review">
+                    <strong>Leon K.</strong> ⭐⭐⭐⭐⭐<br />
+                    <p>Diese Möbel sind ein echter Hingucker! Einfach zusammengebaut, super stabil.</p>
+                </div>
+                <div class="review">
+                    <strong>Sarah L.</strong> ⭐⭐⭐⭐☆<br />
+                    <p>Cooles Konzept! Könnte noch mehr Farbauswahl bieten.</p>
+                </div>
+            </div>
+            <div class="review-form">
+                <input type="text" placeholder="Dein Name" />
+                <select>
+                    <option>⭐⭐⭐⭐⭐</option>
+                    <option>⭐⭐⭐⭐</option>
+                    <option>⭐⭐⭐</option>
+                </select>
+                <textarea placeholder="Dein Feedback"></textarea>
+                <button>Post</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-columns">
+            <div>
+                <h4>ÜBER UNS</h4>
+                <p>Über die LEGO Gruppe<br>LEGO News<br>Karriere</p>
+            </div>
+            <div>
+                <h4>SUPPORT</h4>
+                <p>Kontakt<br>Rücksendungen<br>Zahlungsmethoden</p>
+            </div>
+            <div>
+                <h4>ATTRAKTIONEN</h4>
+                <p>LEGO House<br>LEGOLAND® Parks</p>
+            </div>
+            <div>
+                <h4>MEHR ÜBER UNS</h4>
+                <p>LEGO Magazine<br>LEGO Education<br>LEGO Foundation</p>
+            </div>
+        </div>
+        <p class="footer-bottom">© LEGO Gruppe</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
